@@ -9,7 +9,7 @@ body {
 .header {
     padding: 60px;
     width: 100%;
-    background-image: linear-gradient(to top, #C4BDB2, #A69E96);
+    background-image: linear-gradient(to top, #1a1516, #3a2a2d);
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -17,7 +17,7 @@ body {
     color: white;
     font-size: 30px;
     object-fit: fill;
-    box-sizing: border-box;
+    box-sizing: border-box
 }
 
 .logo {
@@ -48,29 +48,6 @@ body {
 }
 
 .card p {
-    font-size: 1rem;
-    line-height: 1.5;
-}
-
-.profile {
-    display: flex;
-    align-items: center;
-}
-
-.profile-pic {
-    width: 100px;
-    height: 100px;
-    object-fit: cover;
-    border-radius: 10%;
-    margin-right: 20px;
-}
-
-.bio h1 {
-    margin: 0;
-    font-size: 2rem;
-}
-
-.bio p {
     font-size: 1rem;
     line-height: 1.5;
 }

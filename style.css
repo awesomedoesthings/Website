@@ -1,21 +1,24 @@
 :root {
     /* === Main Color Pallette === */
     --color-white: #ffffff;
-    --color-off-white: #f8f8f8;
+    --color-off-white: #f5f5f5;
 
-    --color-gray-900: #222;
-    --color-gray-800: #282828;
-    --color-gray-700: #333;
-    --color-gray-600: #444;
-    --color-gray-500: #555;
-    --color-gray-400: #aaa;
-    --color-gray-300: #ccc;
-    --color-gray-200: #e0e0e0;
+    --color-gray-900: #1a1a1a;
+    --color-gray-800: #212121;
+    --color-gray-700: #2b2b2b;
+    --color-gray-600: #3a3a3a;
+    --color-gray-500: #4f4f4f;
+    --color-gray-450: #6a6a6a;
+    --color-gray-400: #888888;
+    --color-gray-300: #cccccc;
+    --color-gray-200: #e5e5e5;
+
+    --color-blue: #6495ED;
 
     /* === Shadow Colors === */
-    --shadow-dark: rgba(0, 0, 0, 0.3);
-    --shadow-medium: rgba(0, 0, 0, 0.2);
-    --shadow-light: rgba(0, 0, 0, 0.1);
+    --shadow-dark: rgba(0, 0, 0, 0.4);
+    --shadow-medium: rgba(0, 0, 0, 0.25);
+    --shadow-light: rgba(0, 0, 0, 0.15);
 
     /* === Text Colors === */
     --text-on-dark: var(--color-white);
@@ -24,20 +27,23 @@
     --text-faded: var(--color-gray-400);
 
     /* === Specific Gradients === */
-    --header-gradient-start: #c4bdb2;
-    --header-gradient-end: #a69e96;
+    --header-gradient-start: #9a918a;
+    --header-gradient-end: #b5ac9d;
 
-    --heart-gradient-start: #ff4d4d;
-    --heart-gradient-end: #ff1a75;
-    --heart-shadow-light: rgba(255, 50, 100, 0.5);
-    --heart-shadow-dark: rgba(255, 50, 100, 0.8);
-    --heart-shadow-darker: rgba(255, 0, 100, 0.6);
+    --heart-gradient-start: #ff5c5c;
+    --heart-gradient-end: #ff2b85;
+    --heart-shadow-light: rgba(255, 60, 110, 0.5);
+    --heart-shadow-dark: rgba(255, 60, 110, 0.8);
+    --heart-shadow-darker: rgba(255, 10, 110, 0.6);
 
-    --link-gradient-start: #1e90ff;
-    --link-gradient-end: #007bff;
-    --link-shadow-light: rgba(30, 144, 255, 0.5);
-    --link-shadow-dark: rgba(30, 144, 255, 0.8);
-    --link-shadow-darker: rgba(0, 123, 255, 0.6);
+    --link-gradient-start: #2a9dff;
+    --link-gradient-end: #0a8bff;
+    --link-shadow-light: rgba(42, 157, 255, 0.5);
+    --link-shadow-dark: rgba(42, 157, 255, 0.8);
+    --link-shadow-darker: rgba(10, 139, 255, 0.6);
+
+    /* === PLEASE IGNORE my awful css. I took one web design class in high school. === */
+    /* === If you would like to make contributions / changes you can via github! :) === */
 }
 
 body {
@@ -77,13 +83,13 @@ body {
     margin: 20px;
     padding: 30px;
     text-align: left;
-    margin: 20px auto; /* Added 'auto' for horizontal centering */
-    max-width: 800px; /* Example max-width, adjust as needed */
+    margin: 20px auto;
+    max-width: 800px;
 }
 
 .card h1 {
     font-size: 2.5rem;
-    margin: 0 0 10px;
+    margin: 0px 0 10px;
 }
 
 .links-card h1 {
@@ -101,7 +107,45 @@ body {
 .links-card p {
     font-size: 1.25rem;
     line-height: 1.5;
-    margin: 10px 0 0;
+    margin: 10px 0 20px;
+}
+
+.link-button {
+    position: relative;
+    justify-content: space-between;
+}
+
+.link-button span {
+    flex-grow: 1;
+}
+
+.copy-button {
+    background-color: var(--color-gray-500);
+    color: var(--text-on-medium);
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 0.85rem;
+    transition: opacity 0.3s ease, background-color 0.3s ease;
+    white-space: nowrap;
+}
+
+.copy-button:hover {
+    background-color: var(--color-gray-400);
+}
+
+
+.link-button:hover .copy-button {
+    pointer-events: all;
+}
+
+.copy-button:active {
+    background-color: var(--color-gray-400);
+}
+
+.copy-button.copied {
+    background-color: var(--color-blue);
+    color: var(--color-white);
 }
 
 /* === Profile Section === */
@@ -194,9 +238,8 @@ body {
 }
 
 .music-item:hover {
-    transform: translateY(-5px);
     box-shadow: 0 4px 20px var(--shadow-light);
-    transform: scale(1.02);
+    transform: translateY(-5px) scale(1.02);
 }
 
 .music-item-link {
@@ -220,7 +263,7 @@ body {
 
 .album-name {
     font-weight: 600;
-    color: var(--text-on-dark); /* Using general text color */
+    color: var(--text-on-dark);
 }
 
 .artist-name {
@@ -288,7 +331,7 @@ body {
     border-radius: 8px;
     margin-top: 20px;
     margin-bottom: 20px;
-    display: block; /* Ensures image takes its own line */
+    display: block;
     margin-left: auto;
     margin-right: auto;
     box-shadow: 0 4px 10px var(--shadow-medium);
@@ -321,7 +364,7 @@ body {
 }
 
 .blog-post-content blockquote {
-    border-left: 5px solid var(--link-gradient-start);
+    border-left: 5px solid var(--color-blue);
     padding-left: 20px;
     margin: 20px 0;
     font-style: italic;
@@ -332,6 +375,7 @@ body {
     font-size: 0.9rem;
     color: var(--text-faded);
     display: block;
+    margin-bottom: 20px;
 }
 
 /* === Author === */
@@ -339,8 +383,8 @@ body {
     display: flex;
     align-items: center;
     padding: 15px 0;
-    border-top: 1px solid var(--border-color);
-    border-bottom: 1px solid var(--border-color);
+    border-top: 2px solid var(--color-gray-500);
+    border-bottom: 2px solid var(--color-gray-500);
 }
 
 .author-profile-pic {
@@ -355,6 +399,83 @@ body {
     font-size: 1.2rem;
     font-weight: bold;
     color: var(--text-on-dark);
+}
+
+/* === Blog Post === */
+.blog-post-card {
+    padding: 0;
+    overflow: hidden;
+}
+
+.blog-post-link {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+}
+
+.blog-post-image {
+    width: 100%;
+    height: 0;
+    padding-bottom: 56.25%;
+    background-size: cover;
+    background-position: center;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    margin-bottom: 20px;
+}
+
+.blog-post-card .blog-post-image {
+    padding-bottom: 0;
+    object-fit: cover;
+    width: 100%;
+    height: auto;
+    max-height: 250px;/
+    display: block;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+    margin-bottom: 0;
+}
+
+.blog-post-details {
+    padding: 20px 30px 30px;
+}
+
+.blog-post-card h2 {
+    font-size: 1.8rem;
+    margin-top: 0;
+    margin-bottom: 10px;
+    color: var(--text-on-dark);
+}
+
+.blog-post-card .author-info {
+    border-top: none;/
+    border-bottom: none;
+    padding: 0;
+    margin-bottom: 10px;
+}
+
+.blog-post-card .author-profile-pic {
+    height: 40px;
+    width: 40px;
+}
+
+.blog-post-card .author-name {
+    font-size: 1rem;
+}
+
+.blog-post-card .blog-post-date {
+    margin-bottom: 0;
+}
+
+/* === Hover effect for the blog post card === */
+.blog-post-link:hover .blog-post-image {
+    filter: brightness(0.8);
+    transition: filter 0.3s ease;
+}
+
+.blog-post-link:hover h2 {
+    color: var(--color-blue);
+    transition: color 0.3s ease;
 }
 
 /* === Responsive Styles === */
